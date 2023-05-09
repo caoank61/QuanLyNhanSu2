@@ -1,0 +1,583 @@
+﻿.boxSlide {
+    background-image: url('image/2_02.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+    .boxSlide .title {
+        padding: 120px 0px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #FFF;
+    }
+/*---------------------------------------------*/
+.boxHCMDalat .boxAbout {
+    padding: 40px 0px 0px;
+}
+
+    .boxHCMDalat .boxAbout .boxImg {
+        text-align: right;
+    }
+
+        .boxHCMDalat .boxAbout .boxImg img {
+            width: 80%;
+        }
+
+    .boxHCMDalat .boxAbout .title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #c70302;
+        margin: 0px 0px 30px 0px;
+        padding: 0px 0px 30px 0px;
+        position: relative;
+    }
+
+        .boxHCMDalat .boxAbout .title:after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 0%;
+            width: 15%;
+            height: 1.5px;
+            background-color: #2a771b;
+        }
+
+    .boxHCMDalat .boxAbout .des {
+        text-align: justify;
+    }
+/*--------------------------------------*/
+.boxQuydinh {
+    background-color: #FFF;
+    padding: 50px 0px;
+}
+
+    .boxQuydinh .title {
+        text-align: center;
+        color: #c70302;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin: 0px 0px 30px;
+        line-height: 40px;
+        position: relative;
+    }
+
+        .boxQuydinh .title:after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 45%;
+            width: 10%;
+            height: 1.5px;
+            background-color: #2a771b;
+        }
+
+    .boxQuydinh .contents {
+        width: 80%;
+        margin: auto;
+    }
+
+    .boxQuydinh .item {
+        padding-right: 30px;
+    }
+
+        .boxQuydinh .item.border {
+            border-right: 1px solid #8c8c8c;
+        }
+
+        .boxQuydinh .item .des {
+            text-align: justify;
+        }
+
+    .boxQuydinh .contents .boxImg {
+        width: 90%;
+        margin: 0px 0px 20px;
+    }
+
+        .boxQuydinh .contents .boxImg .boxImgItem {
+            background-size: cover;
+            background-position: center;
+            height: 80px;
+            width: 80px;
+            margin: auto;
+            background-repeat: no-repeat;
+        }
+
+    .boxQuydinh .item .info {
+        min-height: 145px;
+        position: relative;
+    }
+
+    .boxQuydinh .viewMoreRegu {
+        position: absolute;
+        bottom: -35px;
+        text-align: center;
+        width: 90%;
+    }
+/*--------------------------------------*/
+.boxfleet {
+    padding: 50px 0px;
+}
+
+    .boxfleet .title {
+        text-align: center;
+        color: #c70302;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin: 0px 0px 30px;
+        line-height: 40px;
+        position: relative;
+    }
+
+        .boxfleet .title:after {
+            content: '';
+            position: absolute;
+            top: -9px;
+            left: 45%;
+            width: 10%;
+            height: 1.5px;
+            background-color: #2a771b;
+        }
+
+    .boxfleet .contents .item {
+        float: left;
+        width: 18%;
+        margin: 0px 1%;
+    }
+
+        .boxfleet .contents .item .boxImg {
+            background-size: cover;
+            background-position: center;
+            height: 210px;
+            width: 210px;
+            background-repeat: no-repeat;
+            margin: auto;
+            border-radius: 100%;
+        }
+
+        .boxfleet .contents .item .name {
+            color: #222;
+            margin: 10px 0px 10px;
+            text-align: center;
+        }
+/*-------------------------------------------*/
+.boxGiacuoc .contents {
+    width: 70%;
+    margin: auto;
+}
+
+.boxGiacuoc .title {
+    text-align: center;
+    color: #c70302;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0px 0px 30px;
+    line-height: 40px;
+    position: relative;
+}
+
+    .boxGiacuoc .title:after {
+        content: '';
+        position: absolute;
+        top: -9px;
+        left: 45%;
+        width: 10%;
+        height: 1.5px;
+        background-color: #2a771b;
+    }
+
+.boxGiacuoc .contents .boxTableHeader {
+    border: 1px solid #888888;
+}
+
+    .boxGiacuoc .contents .boxTableHeader .item {
+        line-height: 50px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+.boxGiacuoc .contents .boxTableBody {
+    border: 1px solid #888888;
+    border-top: none;
+}
+
+    .boxGiacuoc .contents .boxTableBody .item.borderRight, .boxGiacuoc .contents .boxTableHeader .item.borderRight {
+        border-right: 1px solid #888888;
+    }
+
+    .boxGiacuoc .contents .boxTableBody .item {
+        line-height: 50px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+
+        .boxGiacuoc .contents .boxTableBody .item.linefull {
+            min-height: 200px !important;
+            line-height: 20px;
+        }
+
+            .boxGiacuoc .contents .boxTableBody .item.linefull p {
+                padding: 20px 0px 0px;
+            }
+
+        .boxGiacuoc .contents .boxTableBody .item.linefull2 {
+            line-height: 200px !important;
+        }
+
+        .boxGiacuoc .contents .boxTableBody .item.pad10 {
+            padding: 0px 0px 0px 15px;
+        }
+
+        .boxGiacuoc .contents .boxTableBody .item.borderBottom {
+            border-bottom: 1px solid #888888;
+        }
+
+.boxNotify {
+    margin: 15px 0px 0px;
+}
+/*--------------------------------------*/
+.boxInfo {
+    margin: 0px 0px 40px;
+}
+
+    .boxInfo .title {
+        text-align: center;
+        color: #c70302;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin: 0px auto 30px;
+        display: table;
+        line-height: 40px;
+        position: relative;
+    }
+
+        .boxInfo .title:after {
+            content: '';
+            position: absolute;
+            top: -9px;
+            left: 30%;
+            width: 40%;
+            height: 1.5px;
+            background-color: #2a771b;
+        }
+
+    .boxInfo .contents .items .item {
+        text-align: center;
+        border: 1px solid #a3a3a3;
+        border-top: none;
+        line-height: 70px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+
+        .boxInfo .contents .items .item .name.one {
+            text-transform: uppercase;
+        }
+
+        .boxInfo .contents .items .item .name.borderRight {
+            border-right: 1px solid #a3a3a3;
+        }
+
+    .boxInfo .contents .items .titleTable {
+        line-height: 70px;
+        text-align: center;
+        color: #FFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        background-size: 100% 70px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+        .boxInfo .contents .items .titleTable.one {
+            background-image: url('image/title1.png');
+        }
+
+        .boxInfo .contents .items .titleTable.two {
+            background-image: url('image/title2.png');
+        }
+
+        .boxInfo .contents .items .titleTable.three {
+            background-image: url('../../public/images/title3.png');
+            background-image: url('image/title3.png');
+            color: #2a771b;
+        }
+
+    .boxInfo .contents .items ul {
+        list-style: none;
+        display: table;
+        margin: 0px auto;
+        padding: 15px 0px;
+    }
+
+        .boxInfo .contents .items ul li {
+            float: left;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #2a771b;
+            color: #FFF;
+            border-radius: 100%;
+            margin: 0px 10px;
+        }
+
+    .boxInfo .contents .items .uppercase {
+        text-transform: uppercase;
+    }
+
+    .boxInfo .contents .items .end {
+        padding: 0px 0px 0px 15px;
+    }
+/*--------------------------------------*/
+.boxContact {
+    margin: 40px 0px;
+}
+
+    .boxContact .title {
+        text-align: center;
+        color: #c70302;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin: 0px auto 30px;
+        display: table;
+        line-height: 40px;
+        position: relative;
+    }
+
+        .boxContact .title:after {
+            content: '';
+            position: absolute;
+            top: -9px;
+            left: 30%;
+            width: 40%;
+            height: 1.5px;
+            background-color: #2a771b;
+        }
+
+    .boxContact .item .name {
+        color: #2a771b;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0px 0px 20px;
+    }
+
+    .boxContact .item ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .boxContact .item ul li {
+            background-image: url('../../public/images/address2.png');
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+            background-position: left 0px;
+            padding: 0px 0px 0px 25px;
+            line-height: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+
+            .boxContact .item ul li.phone {
+                background-image: url('../../public/images/phone.png');
+            }
+
+            .boxContact .item ul li.times {
+                background-image: url('../../public/images/times.png');
+            }
+
+            .boxContact .item ul li span {
+                color: #c70302;
+            }
+/*----------------------- for mobile -----------------------------*/
+.itemsMobi .boxTitle {
+    line-height: 70px;
+    text-align: center;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-size: 100% 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .itemsMobi .boxTitle.bg1 {
+        background-image: url(../../public/images/title2.png);
+    }
+
+    .itemsMobi .boxTitle.bg2 {
+        background-image: url(../../public/images/title3.png);
+        color: #2a771b;
+    }
+
+.itemsMobi ul {
+    list-style: none;
+    display: table;
+    margin: 0px auto;
+    padding: 15px 0px;
+}
+
+    .itemsMobi ul li {
+        float: left;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #2a771b;
+        color: #FFF;
+        border-radius: 100%;
+        margin: 0px 10px;
+    }
+
+.boxB {
+    background-color: #f5f5f5;
+}
+
+.boxB2 {
+    background-color: #fff;
+    line-height: 68px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.boxB3 {
+    line-height: 68px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+    .boxB3 span {
+        background-image: url(https://optech.vn/public/images/icon/ic_phone_banner.png);
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        background-position: left 0px;
+        padding: 0px 0px 0px 30px;
+        line-height: 25px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: #c70302;
+    }
+
+.boxB4 {
+    background-color: #FFF;
+}
+
+.boxB5 {
+    line-height: 68px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #f5f5f5;
+}
+
+.boxGCMobi {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+    .boxGCMobi .nameR {
+        background-color: #2a771b;
+        color: #FFF;
+        line-height: 25px;
+        padding: 10px 10px;
+    }
+
+    .boxGCMobi .item {
+        line-height: 45px;
+        border: 1px solid #ddd;
+        border-top: none;
+        padding: 0px 10px 0px 10px;
+    }
+
+        .boxGCMobi .item .boder-left {
+            border-left: 1px solid #ddd;
+            text-align: right;
+        }
+
+@media screen and (max-width: 768px) {
+    .boxfleet .contents {
+        width: 100% !important;
+    }
+
+    .boxQuydinh .contents {
+        width: 100%;
+    }
+
+    .boxSlide .title {
+        padding: 50px 0px;
+    }
+
+    .boxHCMDalat .boxAbout {
+        padding: 40px 0px 0px;
+    }
+
+    .boxContact .contents {
+        width: 95%;
+    }
+
+    .maMbi {
+        margin: 20px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .boxSlide .title {
+        padding: 30px 0px;
+    }
+
+    .boxHCMDalat .boxAbout .boxImg img {
+        width: 65%;
+    }
+
+    .boxHCMDalat .boxAbout .boxImg {
+        text-align: center;
+    }
+
+    .boxHCMDalat .boxAbout {
+        padding: 20px 0px 0px;
+    }
+
+    .boxfleet .contents {
+        width: 100% !important;
+    }
+
+    .boxContact {
+        margin: 40px 0px 0px;
+    }
+
+    .boxGiacuoc .contents {
+        width: 100%;
+    }
+
+    .boxB5 {
+        line-height: 25px;
+        padding: 20px 0px;
+    }
+}
