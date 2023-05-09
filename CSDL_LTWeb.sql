@@ -32,6 +32,7 @@ Create table ChamCong (
 	NgayChamCong date,
 	IdNV int,
 	CONSTRAINT fk_NhanVienCC foreign key (IdNV) references NhanVien (IdNV), 
+	CONSTRAINT pk_ChamCong PRIMARY KEY (IdNV,NgayChamCong),
 );
 Create table HopDong (
 	IdHD int primary key not null,
