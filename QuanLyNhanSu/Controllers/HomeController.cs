@@ -10,7 +10,7 @@ namespace QuanLyNhanSu.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Login", "Home");
+           return View();
         }
 
         //đăng nhập, đăng xuất
@@ -25,10 +25,15 @@ namespace QuanLyNhanSu.Controllers
         {
             var tk = "adminns";
             var mk = "ns.123456";
-            if (TaiKhoan == tk && MatKhau == mk) return Redirect("~/Home/Index");
+            if (TaiKhoan == tk && MatKhau == mk) { return Redirect("~/Home/Index"); }
             else ViewBag.error = "Thông tin đăng nhập không hợp lệ!!!";
             return View();
 
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Home");
         }
     }
 }
