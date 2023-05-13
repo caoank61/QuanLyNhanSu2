@@ -22,6 +22,7 @@ namespace QuanLyNhanSu.Models
             this.HopDongs = new HashSet<HopDong>();
         }
     
+        [Display(Name ="Mã Nhân Viên")]
         public int IdNV { get; set; }
         [Required(ErrorMessage ="Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Họ Và Tên Nhân Viên")]
@@ -50,6 +51,8 @@ namespace QuanLyNhanSu.Models
         public string GioiTinh { get; set; }
 
         [Display(Name = "Ngày Sinh")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> NgaySinh { get; set; }
 
         [Display(Name = "Quê Quán")]
@@ -60,9 +63,11 @@ namespace QuanLyNhanSu.Models
 
         [Display(Name = "Chuyên Ngành")]
         public string ChuyenNganh { get; set; }
-        
+
+        [Display(Name = "Phòng Ban")]
         public Nullable<int> IdPB { get; set; }
-        
+
+        [Display(Name = "Chức Vụ")]
         public Nullable<int> IdCV { get; set; }
 
         [Display(Name = "Trình Độ Học Vấn")]

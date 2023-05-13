@@ -15,6 +15,7 @@ namespace QuanLyNhanSu.Models
     
     public partial class HopDong
     {
+        [Display(Name = "Mã Hợp Đồng")]
         public int IdHD { get; set; }
         public Nullable<int> IdNV { get; set; }
         [Display(Name = "Loại Hợp Đồng")]

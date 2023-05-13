@@ -5,30 +5,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh Sách Chấm Công</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="form-group row">
+    <div class="col-md-1">
+        <a href="@Url.Action("Create","ChamCongs")" class="btn btn-outline-success btn-sm">Thêm mới</a>
+    </div>
+    
+</div>
+<table class="table table-dark table-hover table-bordered text-center table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NhanVien.HoTen)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayChamCong)
+        </th>
+        <th>Thao Tác</th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NhanVien.HoTen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.NhanVien.HoTen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayChamCong)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new {ngay = item.NgayChamCong,id = item.IdNV /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { ngay = item.NgayChamCong, id = item.IdNV /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { ngay = item.NgayChamCong, id = item.IdNV /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+} 
 
 </table>

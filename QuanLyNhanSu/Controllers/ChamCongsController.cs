@@ -22,13 +22,13 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Details/5
-        public ActionResult Details(DateTime id)
+        public ActionResult Details(DateTime ngay,int id)
         {
-            if (id == null)
+            if (id == 0&& ngay== null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChamCong chamCong = db.ChamCongs.Find(id);
+            ChamCong chamCong = db.ChamCongs.Find(ngay,id);
             if (chamCong == null)
             {
                 return HttpNotFound();
@@ -62,19 +62,24 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Edit/5
-        public ActionResult Edit(DateTime id)
+        public ActionResult Edit(DateTime ngay,int? id)
         {
-            if (id == null)
+            var ngayc = ngay.ToString("dd/MM/yyyy");
+            if (id == null && ngay == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChamCong chamCong = db.ChamCongs.Find(id);
+            ViewBag.ngay = ngay.ToString("dd/MM/yyyy");
+            ViewBag.id = id;
+            ChamCong chamCong = db.ChamCongs.Where(p => p.IdNV == id && Convert.ToString(p.NgayChamCong)  == ngayc).FirstOrDefault();
+
             if (chamCong == null)
             {
                 return HttpNotFound();
             }
             ViewBag.IdNV = new SelectList(db.NhanViens, "IdNV", "HoTen", chamCong.IdNV);
             return View(chamCong);
+
         }
 
         // POST: ChamCongs/Edit/5
@@ -95,13 +100,13 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Delete/5
-        public ActionResult Delete(DateTime id)
+        public ActionResult Delete(DateTime ngay,int id)
         {
-            if (id == null)
+            if (id == 0 && ngay == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChamCong chamCong = db.ChamCongs.Find(id);
+            ChamCong chamCong = db.ChamCongs.Find(ngay, id);
             if (chamCong == null)
             {
                 return HttpNotFound();
@@ -112,9 +117,9 @@ namespace QuanLyNhanSu.Controllers
         // POST: ChamCongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(DateTime id)
+        public ActionResult DeleteConfirmed(DateTime ngay,int id)
         {
-            ChamCong chamCong = db.ChamCongs.Find(id);
+            ChamCong chamCong = db.ChamCongs.Find(ngay, id);
             db.ChamCongs.Remove(chamCong);
             db.SaveChanges();
             return RedirectToAction("Index");

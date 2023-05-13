@@ -16,6 +16,8 @@ namespace QuanLyNhanSu.Models
     public partial class ChamCong
     {
         [Display(Name = "Ngày Chấm Công")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime NgayChamCong { get; set; }
         [Display(Name = "Mã Nhân Viên")]
         public int IdNV { get; set; }
