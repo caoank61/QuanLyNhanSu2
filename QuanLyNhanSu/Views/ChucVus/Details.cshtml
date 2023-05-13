@@ -1,0 +1,25 @@
+﻿@model QuanLyNhanSu.Models.ChucVu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi Tiết Chức Vụ</h2>
+<br />
+<br />
+
+<div>
+    <p><strong>@Html.DisplayNameFor(model => model.IdCV) : </strong>@Html.DisplayFor(model => model.IdCV)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.TenCV) : </strong>@Html.DisplayFor(model => model.TenCV)</p>
+</div>
+<br />
+<br />
+<div class="form-group row">
+    <div class="col-auto ">
+        <a href="@Url.Action("Index", "ChucVus", new { id = Model.IdCV })" class="btn btn-primary "><i class="fas fa-backward"> Trở Lại </i></a>
+    </div>
+    <div class="col-auto">
+        <a href="@Url.Action("Edit", "ChucVus", new { id = Model.IdCV })" class="btn btn-success "><i class="fas fa-pen"> Chỉnh Sửa </i></a>
+    </div>
+</div>

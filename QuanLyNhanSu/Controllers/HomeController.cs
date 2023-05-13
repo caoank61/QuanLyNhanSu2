@@ -3,15 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using QuanLyNhanSu.Models;
 
 namespace QuanLyNhanSu.Controllers
 {
     public class HomeController : Controller
     {
+        private Data db = new Data();
         public ActionResult Index()
         {
-           return View();
+            if (Session["user_id"] != null)
+            {
+                ViewBag.NV = db.NhanViens.AsQueryable().ToList().Count();
+                ViewBag.PB = db.PhongBans.AsQueryable().ToList().Count();
+                return View();
+               //Lấy Thông tin user đăng nhập  db.NhanViens.Where(p => p.IdNV == Convert.ToInt32( Session["user_id"]));
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
         }
+        
 
         //đăng nhập, đăng xuất
         [HttpGet]
@@ -23,10 +36,14 @@ namespace QuanLyNhanSu.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(string TaiKhoan, string MatKhau)
         {
-            var tk = "adminns";
-            var mk = "ns.123456";
-            if (TaiKhoan == tk && MatKhau == mk) { return Redirect("~/Home/Index"); }
-            else ViewBag.error = "Thông tin đăng nhập không hợp lệ!!!";
+            MatKhau = Helper.ComputeSha256Hash(MatKhau);
+            var user =  db.NhanViens.Where(p => p.Email == TaiKhoan).Where(p => p.Password == MatKhau).FirstOrDefault();
+            if (user != null)
+            {
+                Session["user_id"] = user.IdNV;
+                Session["HoTen_user"] = user.HoTen;
+                return RedirectToAction("Index", "Home");
+            }else ViewBag.error = "Thông tin đăng nhập không hợp lệ!!!";
             return View();
 
         }
