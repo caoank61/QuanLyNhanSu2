@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QuanLyNhanSu.Models.HopDong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiHD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TuNgay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DenNgay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.HoTen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuNgay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DenNgay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhanVien.HoTen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdHD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdHD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdHD })
+        </td>
+    </tr>
+}
+
+</table>

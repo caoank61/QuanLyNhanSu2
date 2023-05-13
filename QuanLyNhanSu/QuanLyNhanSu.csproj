@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AF0DBE94-D1A4-457C-9AAB-EA795309EFDC}</ProjectGuid>
+    <ProjectGuid>{E6D21C14-4DE9-4B2B-9FBE-D531A21A5C02}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressSSLPort>44343</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -128,39 +128,45 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChamCongsController.cs" />
+    <Compile Include="Controllers\ChucVusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HopDongsController.cs" />
+    <Compile Include="Controllers\NhanViensController.cs" />
+    <Compile Include="Controllers\PhongBansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Models\ChamCong.cs">
-      <DependentUpon>NhanSuModel.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChucVu.cs">
-      <DependentUpon>NhanSuModel.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\HopDong.cs">
-      <DependentUpon>NhanSuModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhanSuModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NhanSuModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhanSuModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NhanSuModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhanSuModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NhanSuModel.edmx</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NhanVien.cs">
-      <DependentUpon>NhanSuModel.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PhongBan.cs">
-      <DependentUpon>NhanSuModel.tt</DependentUpon>
+      <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -173,25 +179,110 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\NhanSuModel.Context.tt">
+    <Content Include="Models\Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NhanSuModel.edmx</DependentUpon>
-      <LastGenOutput>NhanSuModel.Context.cs</LastGenOutput>
+      <LastGenOutput>Data.Context.cs</LastGenOutput>
+      <DependentUpon>Data.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\NhanSuModel.tt">
+    <Content Include="Models\Data.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NhanSuModel.edmx</DependentUpon>
-      <LastGenOutput>NhanSuModel.cs</LastGenOutput>
+      <DependentUpon>Data.edmx</DependentUpon>
+      <LastGenOutput>Data.cs</LastGenOutput>
     </Content>
+    <Content Include="public\Admin\css\adminlte.min.css" />
+    <Content Include="public\Admin\css\all.min.css" />
+    <Content Include="public\Admin\css\dataTables.bootstrap4.min.css" />
+    <Content Include="public\Admin\css\daterangepicker.css" />
+    <Content Include="public\Admin\css\font-sans.pro.css" />
+    <Content Include="public\Admin\css\icheck-bootstrap.min.css" />
+    <Content Include="public\Admin\css\jqvmap.min.css" />
+    <Content Include="public\Admin\css\OverlayScrollbars.min.css" />
+    <Content Include="public\Admin\css\responsive.bootstrap4.min.css" />
+    <Content Include="public\Admin\css\style.css" />
+    <Content Include="public\Admin\css\summernote-bs4.css" />
+    <Content Include="public\Admin\css\sweetalert2.min.css" />
+    <Content Include="public\Admin\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="public\Admin\css\toastr.min.css" />
+    <Content Include="public\Admin\images\bg-01.jpg" />
+    <Content Include="public\Admin\images\credit\american-express.png" />
+    <Content Include="public\Admin\images\credit\cirrus.png" />
+    <Content Include="public\Admin\images\credit\mastercard.png" />
+    <Content Include="public\Admin\images\credit\mestro.png" />
+    <Content Include="public\Admin\images\credit\paypal.png" />
+    <Content Include="public\Admin\images\credit\paypal2.png" />
+    <Content Include="public\Admin\images\credit\visa.png" />
+    <Content Include="public\Admin\images\user\3.jpg" />
+    <Content Include="public\Admin\images\user\nghiep.jpg" />
+    <Content Include="public\Admin\images\user\nguyen-van-nghiep.jpg" />
+    <Content Include="public\Admin\images\user\root.jpg" />
+    <Content Include="public\Admin\js\adminlte.min.js" />
+    <Content Include="public\Admin\js\bootstrap.bundle.min.js" />
+    <Content Include="public\Admin\js\ckeditor.js" />
+    <Content Include="public\Admin\js\dataTables.bootstrap4.min.js" />
+    <Content Include="public\Admin\js\j.js" />
+    <Content Include="public\Admin\js\jquery.dataTables.min.js" />
+    <Content Include="public\Admin\js\jquery.min.js" />
+    <Content Include="public\Admin\js\jquery.overlayScrollbars.min.js" />
+    <Content Include="public\Admin\js\karma.laclac.min.js" />
+    <Content Include="public\Admin\js\summernote-bs4.min.js" />
+    <Content Include="public\Admin\js\sweetalert2.min.js" />
+    <Content Include="public\Admin\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="public\Admin\js\toastr.min.js" />
+    <Content Include="public\Admin\webfonts\fa-brands-400.svg" />
+    <Content Include="public\Admin\webfonts\fa-regular-400.svg" />
+    <Content Include="public\Admin\webfonts\fa-solid-900.svg" />
+    <Content Include="public\css\all.min.css" />
+    <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\css\imageSprite.css" />
+    <Content Include="public\css\owl.carousel.css" />
+    <Content Include="public\css\style.css" />
+    <Content Include="public\css\stylee.css" />
+    <Content Include="public\css\styles.css" />
+    <Content Include="public\image\kisspng-user-computer-icons-gravatar-blog-happy-woman-5aca6d038826d9.7357010215232156195577.jpg" />
+    <Content Include="public\js\bootstrap.bundle.min.js" />
+    <Content Include="public\js\bootstrap.min.js" />
+    <Content Include="public\js\jquery-3.5.1.js" />
+    <Content Include="public\js\jquery-3.5.1.slim.min.js" />
+    <Content Include="public\js\owl.carousel.js" />
+    <Content Include="public\js\popper.min.js" />
+    <Content Include="public\js\qrcode.min.js" />
+    <Content Include="public\js\sweetalert2%409.js" />
+    <Content Include="public\js\target.min.js" />
+    <Content Include="public\router.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\NhanSuModel.edmx">
+    <EntityDeploy Include="Models\Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NhanSuModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NhanSuModel.edmx.diagram">
-      <DependentUpon>NhanSuModel.edmx</DependentUpon>
+    <Content Include="Models\Data.edmx.diagram">
+      <DependentUpon>Data.edmx</DependentUpon>
     </Content>
+    <Content Include="public\Admin\css\adminlte.min.css.map" />
+    <Content Include="public\Admin\css\font\summernote.eot" />
+    <Content Include="public\Admin\css\font\summernote.ttf" />
+    <Content Include="public\Admin\css\font\summernote.woff" />
+    <Content Include="public\Admin\css\font\summernote.woff2" />
+    <Content Include="public\Admin\js\adminlte.min.js.map" />
+    <Content Include="public\Admin\js\bootstrap.bundle.min.js.map" />
+    <Content Include="public\Admin\js\summernote-bs4.min.js.map" />
+    <Content Include="public\Admin\webfonts\fa-brands-400.eot" />
+    <Content Include="public\Admin\webfonts\fa-brands-400.ttf" />
+    <Content Include="public\Admin\webfonts\fa-brands-400.woff" />
+    <Content Include="public\Admin\webfonts\fa-brands-400.woff2" />
+    <Content Include="public\Admin\webfonts\fa-regular-400.eot" />
+    <Content Include="public\Admin\webfonts\fa-regular-400.ttf" />
+    <Content Include="public\Admin\webfonts\fa-regular-400.woff" />
+    <Content Include="public\Admin\webfonts\fa-regular-400.woff2" />
+    <Content Include="public\Admin\webfonts\fa-solid-900.eot" />
+    <Content Include="public\Admin\webfonts\fa-solid-900.ttf" />
+    <Content Include="public\Admin\webfonts\fa-solid-900.woff" />
+    <Content Include="public\Admin\webfonts\fa-solid-900.woff2" />
+    <Content Include="public\css\bootstrap.min.css.map" />
+    <Content Include="public\js\bootstrap.min.js.map" />
+    <Content Include="public\webfonts\fa-brands-400.woff2" />
+    <Content Include="public\webfonts\fa-regular-400.woff2" />
+    <Content Include="public\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -216,8 +307,33 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\ChucVus\Create.cshtml" />
+    <Content Include="Views\ChucVus\Delete.cshtml" />
+    <Content Include="Views\ChucVus\Details.cshtml" />
+    <Content Include="Views\ChucVus\Edit.cshtml" />
+    <Content Include="Views\ChucVus\Index.cshtml" />
+    <Content Include="Views\NhanViens\Create.cshtml" />
+    <Content Include="Views\NhanViens\Delete.cshtml" />
+    <Content Include="Views\NhanViens\Details.cshtml" />
+    <Content Include="Views\NhanViens\Edit.cshtml" />
+    <Content Include="Views\NhanViens\Index.cshtml" />
+    <Content Include="Views\PhongBans\Create.cshtml" />
+    <Content Include="Views\PhongBans\Delete.cshtml" />
+    <Content Include="Views\PhongBans\Details.cshtml" />
+    <Content Include="Views\PhongBans\Edit.cshtml" />
+    <Content Include="Views\PhongBans\Index.cshtml" />
+    <Content Include="Views\HopDongs\Create.cshtml" />
+    <Content Include="Views\HopDongs\Delete.cshtml" />
+    <Content Include="Views\HopDongs\Details.cshtml" />
+    <Content Include="Views\HopDongs\Edit.cshtml" />
+    <Content Include="Views\HopDongs\Index.cshtml" />
+    <Content Include="Views\ChamCongs\Create.cshtml" />
+    <Content Include="Views\ChamCongs\Delete.cshtml" />
+    <Content Include="Views\ChamCongs\Details.cshtml" />
+    <Content Include="Views\ChamCongs\Edit.cshtml" />
+    <Content Include="Views\ChamCongs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,9 +370,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53642</DevelopmentServerPort>
+          <DevelopmentServerPort>57662</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44389/</IISUrl>
+          <IISUrl>https://localhost:44343/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

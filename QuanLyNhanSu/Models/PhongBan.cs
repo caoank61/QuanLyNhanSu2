@@ -11,7 +11,7 @@ namespace QuanLyNhanSu.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class PhongBan
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,9 +19,12 @@ namespace QuanLyNhanSu.Models
         {
             this.NhanViens = new HashSet<NhanVien>();
         }
-    
+        
+        [Display(Name ="Mã Phòng Ban")]
         public int IdPB { get; set; }
+        [Display(Name ="Tên Phòng Ban")]
         public string TenPhong { get; set; }
+        [Display(Name ="Hotline Phòng Ban")]
         public string SDT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
