@@ -5,127 +5,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi Tiết Thông Tin Nhân Viên</h2>
 
+<br />
+<br />
 <div>
-    <h4>NhanVien</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HoTen)
-        </dt>
+    <p><strong>@Html.DisplayNameFor(model => model.IdNV) : </strong>@Html.DisplayFor(model => model.IdNV)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.HoTen) : </strong>@Html.DisplayFor(model => model.HoTen)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.Email) : </strong>@Html.DisplayFor(model => model.Email)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.Password) : </strong>@Html.DisplayFor(model => model.Password)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.IsAdmin) : </strong>@Html.DisplayFor(model => model.IsAdmin)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.SDT) : </strong>@Html.DisplayFor(model => model.SDT)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.GioiTinh) : </strong>@Html.DisplayFor(model => model.GioiTinh)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.NgaySinh) : </strong>@Html.DisplayFor(model => model.NgaySinh)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.QueQuan) : </strong>@Html.DisplayFor(model => model.QueQuan)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.DanToc) : </strong>@Html.DisplayFor(model => model.DanToc)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.ChuyenNganh) : </strong>@Html.DisplayFor(model => model.ChuyenNganh)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.TrinhDoHV) : </strong>@Html.DisplayFor(model => model.TrinhDoHV)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.LuongCB) : </strong>@Html.DisplayFor(model => model.LuongCB)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.ChucVu.TenCV) : </strong>@Html.DisplayFor(model => model.ChucVu.TenCV)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.PhongBan.TenPhong) : </strong>@Html.DisplayFor(model => model.PhongBan.TenPhong)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.HoTen)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsAdmin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsAdmin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QueQuan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QueQuan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DanToc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DanToc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChuyenNganh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChuyenNganh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TrinhDoHV)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TrinhDoHV)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LuongCB)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LuongCB)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChucVu.TenCV)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChucVu.TenCV)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhongBan.TenPhong)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhongBan.TenPhong)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdNV }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<br />
+<div class="form-group row">
+    <div class="col-auto ">
+        <a href="@Url.Action("Index", "NhanViens", new { id = Model.IdNV })" class="btn btn-primary "><i class="fas fa-backward"> Trở Lại </i></a>
+    </div>
+    <div class="col-auto">
+        <a href="@Url.Action("Edit", "NhanViens", new { id = Model.IdNV })" class="btn btn-success "><i class="fas fa-pen"> Chỉnh Sửa </i></a>
+    </div>
+</div>

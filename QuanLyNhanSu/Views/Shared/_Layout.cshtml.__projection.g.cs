@@ -33,78 +33,71 @@ return ((System.Web.HttpApplication)(Context.ApplicationInstance));
 }
 public override void Execute() {
 
-#line 1 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-__o = Styles.Render("~/Content/css");
-
-
-#line default
-#line hidden
-
-#line 2 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-__o = Scripts.Render("~/bundles/modernizr");
-
-
-#line default
-#line hidden
-
-#line 3 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-           __o = Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" });
-
-
-#line default
-#line hidden
-
-#line 4 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-                   __o = Html.ActionLink("Home", "Index", "Home");
-
-
-#line default
-#line hidden
-
-#line 5 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-                   __o = Html.ActionLink("About", "About", "Home");
-
-
-#line default
-#line hidden
-
-#line 6 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-                   __o = Html.ActionLink("Contact", "Contact", "Home");
-
-
-#line default
-#line hidden
-
-#line 7 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-   __o = RenderBody();
-
-
-#line default
-#line hidden
-
-#line 8 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-                 __o = DateTime.Now.Year;
-
-
-#line default
-#line hidden
-
-#line 9 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-__o = Scripts.Render("~/bundles/jquery");
-
-
-#line default
-#line hidden
-
-#line 10 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
-__o = Scripts.Render("~/bundles/bootstrap");
-
-
-#line default
-#line hidden
-
-#line 11 "C:\Users\ASUS\AppData\Local\Temp\C204DE9B2191E2AA2909B3C8890E2D478659\3\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+#line 1 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
 __o = RenderSection("scripts", required: false);
+
+
+#line default
+#line hidden
+
+#line 2 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                   __o = Session["HoTen_user"];
+
+
+#line default
+#line hidden
+
+#line 3 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                             __o = ;
+
+
+#line default
+#line hidden
+
+#line 4 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                __o = ;
+
+
+#line default
+#line hidden
+
+#line 5 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                __o = ;
+
+
+#line default
+#line hidden
+
+#line 6 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                __o = ;
+
+
+#line default
+#line hidden
+
+#line 7 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                __o = ;
+
+
+#line default
+#line hidden
+
+#line 8 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                __o = ;
+
+
+#line default
+#line hidden
+
+#line 9 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+                                __o = ;
+
+
+#line default
+#line hidden
+
+#line 10 "C:\Users\ASUS\AppData\Local\Temp\0E98AC741E019D68503D515728FB28527F1C\2\QuanLyNhanSu\Views\Shared\_Layout.cshtml"
+       __o = ;
 
 
 #line default

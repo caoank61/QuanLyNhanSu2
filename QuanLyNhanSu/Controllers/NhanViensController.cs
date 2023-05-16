@@ -53,7 +53,6 @@ namespace QuanLyNhanSu.Controllers
         {
             if (ModelState.IsValid)
             {
-                nhanVien.Password = Helper.ComputeSha256Hash(nhanVien.Password);
                 db.NhanViens.Add(nhanVien);
                 db.SaveChanges();
                 return RedirectToAction("Index");

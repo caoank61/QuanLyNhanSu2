@@ -1,44 +1,51 @@
 ﻿@model QuanLyNhanSu.Models.ChamCong
 
 @{
-    ViewBag.Title = "Thêm Thông Tin Chấm Công";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@*@section scripts {
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+}*@
+<h2 class="text-center">Thêm Chấm Công</h2>
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>ChamCong</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.NgayChamCong, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NgayChamCong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.NgayChamCong, new { htmlAttributes = new { @class = "form-control" @*,@id= "datepicker"*@ } })
                 @Html.ValidationMessageFor(model => model.NgayChamCong, "", new { @class = "text-danger" })
             </div>
+
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdNV, "Họ Và Tên Nhân Viên", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdNV, "Tên Nhân Viên", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdNV", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdNV, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="form-group row" style="padding-top:10px;padding-left:10px">
+            <input type="submit" value="Chấm Công" class="btn btn-success" />
+            <div class="col-md-2">
+                <a href="@Url.Action("Index","ChamCongs")" class="btn btn-primary">Trở lại</a>
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Trở Lại", "Index")
-</div>

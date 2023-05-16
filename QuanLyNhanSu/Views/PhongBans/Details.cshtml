@@ -5,31 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="text-center">Chi Tiết Phòng Ban</h2>
 
 <div>
-    <h4>PhongBan</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenPhong)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenPhong)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
-
-    </dl>
+    <p><strong>@Html.DisplayNameFor(model => model.IdPB) : </strong>@Html.DisplayFor(model => model.IdPB)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.TenPhong) : </strong>@Html.DisplayFor(model => model.TenPhong)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.SDT) : </strong>@Html.DisplayFor(model => model.SDT)</p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPB }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<br />
+<div class="form-group row">
+    <div class="col-auto ">
+        <a href="@Url.Action("Index", "PhongBans", new { id = Model.IdPB })" class="btn btn-primary "><i class="fas fa-backward"> Trở Lại </i></a>
+    </div>
+    <div class="col-auto">
+        <a href="@Url.Action("Edit", "PhongBans", new { id = Model.IdPB })" class="btn btn-success "><i class="fas fa-pen"> Chỉnh Sửa </i></a>
+    </div>
+</div>

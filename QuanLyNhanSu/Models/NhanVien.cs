@@ -21,19 +21,21 @@ namespace QuanLyNhanSu.Models
             this.ChamCongs = new HashSet<ChamCong>();
             this.HopDongs = new HashSet<HopDong>();
         }
-    
+        [Display(Name = "Mã Nhân Viên")]
         public int IdNV { get; set; }
-        [Required(ErrorMessage ="Vui lòng không bỏ trống trường này!")]
-        [Display(Name = "Họ Và Tên Nhân Viên")]
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
+        [Display(Name = "Họ Và Tên")]
         public string HoTen { get; set; }
-        [Required(ErrorMessage ="Vui lòng không bỏ trống trường này!")]
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Email Nhân Viên")]
-        [EmailAddress(ErrorMessage ="Email không hợp lệ! Vui lòng kiểm tra lại")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ! Vui lòng kiểm tra lại")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Password")]
-        [StringLength(15,ErrorMessage ="Mật khẩu tối đa {0} ký tự và tối thiểu {2} ký tự",MinimumLength =6)]
+        [StringLength(15, ErrorMessage = "Mật khẩu tối đa {0} ký tự và tối thiểu {2} ký tự", MinimumLength = 6)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
@@ -45,29 +47,42 @@ namespace QuanLyNhanSu.Models
         [Display(Name = "Số Điện Thoại")]
         [RegularExpression("^(?!0+$)(\\+\\d{1,3}[- ]?)?(?!0+$)\\d{10,15}$", ErrorMessage = "Vui lòng nhập đúng định dạng số điện thoại")]
         public string SDT { get; set; }
-        
-        [Display(Name ="Giới Tính")]
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
+        [Display(Name = "Giới Tính")]
         public string GioiTinh { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Ngày Sinh")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> NgaySinh { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Quê Quán")]
         public string QueQuan { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Dân Tộc")]
         public string DanToc { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Chuyên Ngành")]
         public string ChuyenNganh { get; set; }
-        
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
+        [Display(Name = "Phòng Ban")]
         public Nullable<int> IdPB { get; set; }
-        
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
+        [Display(Name = "Chức Vụ")]
         public Nullable<int> IdCV { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Trình Độ Học Vấn")]
         public string TrinhDoHV { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Lương Cơ Bản")]
         public Nullable<double> LuongCB { get; set; }
     
