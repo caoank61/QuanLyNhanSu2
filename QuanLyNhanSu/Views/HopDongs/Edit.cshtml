@@ -5,20 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 class="text-center">Chỉnh Sửa Hợp Đồng</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>HopDong</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.IdHD)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdNV, "IdNV", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdNV, "Tên Nhân Viên", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdNV", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdNV, "", new { @class = "text-danger" })
@@ -49,14 +48,12 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+        <div class="form-group row" style="padding-top:10px;padding-left:15px">
+            <input type="submit" value="Cập Nhật" class="btn btn-success" />
+            <div class="col-md-2">
+                <a href="@Url.Action("Index","HopDongs")" class="btn btn-primary">Trở lại</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

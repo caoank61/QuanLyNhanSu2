@@ -2,11 +2,11 @@
 <Schema Namespace="QuanLyNhanSu.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ChamCong">
     <Key>
-      <PropertyRef Name="NgayChamCong" />
-      <PropertyRef Name="IdNV" />
+      <PropertyRef Name="IdCC" />
     </Key>
-    <Property Name="NgayChamCong" Type="date" Nullable="false" />
-    <Property Name="IdNV" Type="int" Nullable="false" />
+    <Property Name="IdCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayChamCong" Type="date" />
+    <Property Name="IdNV" Type="int" />
   </EntityType>
   <EntityType Name="ChucVu">
     <Key>
@@ -66,7 +66,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_NhanVienCC">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
     <End Role="ChamCong" Type="Self.ChamCong" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NhanVien">

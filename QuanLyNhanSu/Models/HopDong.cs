@@ -15,13 +15,21 @@ namespace QuanLyNhanSu.Models
     
     public partial class HopDong
     {
+        [Display(Name = "Mã Hợp Đồng")]
         public int IdHD { get; set; }
+        [Display(Name = "Tên Nhân Viên")]
         public Nullable<int> IdNV { get; set; }
         [Display(Name = "Loại Hợp Đồng")]
         public string LoaiHD { get; set; }
+
         [Display(Name = "Từ Ngày")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> TuNgay { get; set; }
+
         [Display(Name = "Đến Ngày")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> DenNgay { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }

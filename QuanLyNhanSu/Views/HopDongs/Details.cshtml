@@ -5,47 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="text-center">Chi Tiết Hợp Đồng</h2>
 
 <div>
-    <h4>HopDong</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LoaiHD)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoaiHD)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TuNgay)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TuNgay)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DenNgay)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DenNgay)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NhanVien.HoTen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NhanVien.HoTen)
-        </dd>
-
-    </dl>
+    <p><strong>@Html.DisplayNameFor(model => model.IdHD) : </strong>@Html.DisplayFor(model => model.IdHD)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.LoaiHD) : </strong>@Html.DisplayFor(model => model.LoaiHD)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.NhanVien.HoTen) : </strong>@Html.DisplayFor(model => model.NhanVien.HoTen)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.TuNgay) : </strong>@Html.DisplayFor(model => model.TuNgay)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.DenNgay) : </strong>@Html.DisplayFor(model => model.DenNgay)</p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdHD }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<br />
+<div class="form-group row">
+    <div class="col-auto ">
+        <a href="@Url.Action("Index", "HopDongs", new { id = Model.IdHD })" class="btn btn-primary "><i class="fas fa-backward"> Trở Lại </i></a>
+    </div>
+    <div class="col-auto">
+        <a href="@Url.Action("Edit", "HopDongs", new { id = Model.IdHD })" class="btn btn-success "><i class="fas fa-pen"> Chỉnh Sửa </i></a>
+    </div>
+</div>

@@ -5,25 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 class="text-center">Danh Sách Nhân Viên</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="form-group row">
+    <div class="col-md-1">
+        <a href="@Url.Action("Create","NhanViens")" class="btn btn-outline-success btn-sm">Thêm mới</a>
+    </div>
+</div>
+<table class="table table-dark table-hover table-bordered text-center table-striped">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNV)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.HoTen)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsAdmin)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>*@
+        @*@if (!Convert.ToBoolean(Session["isAdmin"]))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAdmin)
+                </th>
+            }*@
         <th>
             @Html.DisplayNameFor(model => model.SDT)
         </th>
@@ -54,59 +62,67 @@
         <th>
             @Html.DisplayNameFor(model => model.PhongBan.TenPhong)
         </th>
-        <th></th>
+        <th>Thao Tác</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoTen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsAdmin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SDT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GioiTinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgaySinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QueQuan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DanToc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChuyenNganh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrinhDoHV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LuongCB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChucVu.TenCV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhongBan.TenPhong)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdNV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdNV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdNV })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>*@
+            @*@if (!Convert.ToBoolean(Session["isAdmin"]))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsAdmin)
+                    </td>
+                }*@
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueQuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanToc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChuyenNganh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrinhDoHV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuongCB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChucVu.TenCV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhongBan.TenPhong)
+            </td>
+            <td>
+                <a href="@Url.Action("Details", "NhanViens", new { id = item.IdNV })" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="bottom" title="Chi Tiết"><i class="fa fa-book"></i></a>
+                <a href="@Url.Action("Edit", "NhanViens", new { id = item.IdNV })" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Chỉnh Sửa"><i class="fas fa-pen"></i></a>
+                <a href="@Url.Action("Delete", "NhanViens", new { id = item.IdNV })" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="bottom" title="Xóa"><i class="far fa-trash-alt"></i></a>
+            </td>
+        </tr>
+
+    }
 
 </table>

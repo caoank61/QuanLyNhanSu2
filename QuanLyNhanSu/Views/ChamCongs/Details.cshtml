@@ -5,23 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="text-center">Chi Tiết Chấm Công</h2>
 
 <div>
-    <h4>ChamCong</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NhanVien.HoTen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NhanVien.HoTen)
-        </dd>
-
-    </dl>
+    <p><strong>@Html.DisplayNameFor(model => model.IdCC) : </strong>@Html.DisplayFor(model => model.IdCC)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.NhanVien.HoTen) : </strong>@Html.DisplayFor(model => model.NhanVien.HoTen)</p>
+    <p><strong>@Html.DisplayNameFor(model => model.NgayChamCong) : </strong>@Html.DisplayFor(model => model.NgayChamCong)</p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<br />
+<br />
+<div class="form-group row">
+    <div class="col-auto ">
+        <a href="@Url.Action("Index", "ChamCongs", new { id = Model.IdCC })" class="btn btn-primary "><i class="fas fa-backward"> Trở Lại </i></a>
+    </div>
+    <div class="col-auto">
+        <a href="@Url.Action("Edit", "ChamCongs", new { id = Model.IdCC })" class="btn btn-success "><i class="fas fa-pen"> Chỉnh Sửa </i></a>
+    </div>
+</div>
+

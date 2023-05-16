@@ -12,6 +12,7 @@ namespace QuanLyNhanSu.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
     
     public partial class ChucVu
     {
@@ -24,7 +25,7 @@ namespace QuanLyNhanSu.Models
         [Display(Name = "Mã Chức Vụ")]
         public int IdCV { get; set; }
 
-        [Required(ErrorMessage ="Vui Lòng Nhập Trường Này")]
+        [Required(ErrorMessage = "Vui Lòng Nhập Trường Này")]
         [Display(Name = "Tên Chức Vụ")]
         public string TenCV { get; set; }
     

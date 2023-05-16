@@ -15,11 +15,16 @@ namespace QuanLyNhanSu.Models
     
     public partial class ChamCong
     {
+        [Display(Name = "Mã Chấm Công")]
+        public int IdCC { get; set; }
         [Display(Name = "Ngày Chấm Công")]
-        public System.DateTime NgayChamCong { get; set; }
-        [Display(Name = "Mã Nhân Viên")]
-        public int IdNV { get; set; }
-        
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<System.DateTime> NgayChamCong { get; set; }
+
+        [Display(Name = "Tên Nhân Viên")]
+        public Nullable<int> IdNV { get; set; }
+    
         public virtual NhanVien NhanVien { get; set; }
     }
 }
