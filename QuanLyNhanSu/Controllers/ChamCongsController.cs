@@ -22,7 +22,7 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Details/5
-        public ActionResult Details(DateTime id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -48,7 +48,7 @@ namespace QuanLyNhanSu.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NgayChamCong,IdNV")] ChamCong chamCong)
+        public ActionResult Create([Bind(Include = "IdCC,NgayChamCong,IdNV")] ChamCong chamCong)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Edit/5
-        public ActionResult Edit(DateTime id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -82,7 +82,7 @@ namespace QuanLyNhanSu.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NgayChamCong,IdNV")] ChamCong chamCong)
+        public ActionResult Edit([Bind(Include = "IdCC,NgayChamCong,IdNV")] ChamCong chamCong)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Delete/5
-        public ActionResult Delete(DateTime id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -112,7 +112,7 @@ namespace QuanLyNhanSu.Controllers
         // POST: ChamCongs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(DateTime id)
+        public ActionResult DeleteConfirmed(int id)
         {
             ChamCong chamCong = db.ChamCongs.Find(id);
             db.ChamCongs.Remove(chamCong);

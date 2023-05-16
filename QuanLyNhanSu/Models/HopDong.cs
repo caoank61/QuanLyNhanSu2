@@ -12,16 +12,29 @@ namespace QuanLyNhanSu.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class HopDong
     {
+        [Display(Name = "Mã Hợp Đồng")]
         public int IdHD { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
+        [Display(Name = "Tên Nhân Viên")]
         public Nullable<int> IdNV { get; set; }
+
         [Display(Name = "Loại Hợp Đồng")]
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         public string LoaiHD { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Từ Ngày")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> TuNgay { get; set; }
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Đến Ngày")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> DenNgay { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }

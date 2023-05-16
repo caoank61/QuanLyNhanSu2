@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E6D21C14-4DE9-4B2B-9FBE-D531A21A5C02}</ProjectGuid>
+    <ProjectGuid>{EE4DFA52-40A7-4B13-AED1-BE328D4A64F3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44343</IISExpressSSLPort>
+    <IISExpressSSLPort>44368</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -305,15 +305,23 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\ChamCongs\Create.cshtml" />
+    <Content Include="Views\ChamCongs\Delete.cshtml" />
+    <Content Include="Views\ChamCongs\Details.cshtml" />
+    <Content Include="Views\ChamCongs\Edit.cshtml" />
+    <Content Include="Views\ChamCongs\Index.cshtml" />
     <Content Include="Views\ChucVus\Create.cshtml" />
     <Content Include="Views\ChucVus\Delete.cshtml" />
     <Content Include="Views\ChucVus\Details.cshtml" />
     <Content Include="Views\ChucVus\Edit.cshtml" />
     <Content Include="Views\ChucVus\Index.cshtml" />
+    <Content Include="Views\HopDongs\Create.cshtml" />
+    <Content Include="Views\HopDongs\Delete.cshtml" />
+    <Content Include="Views\HopDongs\Details.cshtml" />
+    <Content Include="Views\HopDongs\Edit.cshtml" />
+    <Content Include="Views\HopDongs\Index.cshtml" />
     <Content Include="Views\NhanViens\Create.cshtml" />
     <Content Include="Views\NhanViens\Delete.cshtml" />
     <Content Include="Views\NhanViens\Details.cshtml" />
@@ -324,16 +332,7 @@
     <Content Include="Views\PhongBans\Details.cshtml" />
     <Content Include="Views\PhongBans\Edit.cshtml" />
     <Content Include="Views\PhongBans\Index.cshtml" />
-    <Content Include="Views\HopDongs\Create.cshtml" />
-    <Content Include="Views\HopDongs\Delete.cshtml" />
-    <Content Include="Views\HopDongs\Details.cshtml" />
-    <Content Include="Views\HopDongs\Edit.cshtml" />
-    <Content Include="Views\HopDongs\Index.cshtml" />
-    <Content Include="Views\ChamCongs\Create.cshtml" />
-    <Content Include="Views\ChamCongs\Delete.cshtml" />
-    <Content Include="Views\ChamCongs\Details.cshtml" />
-    <Content Include="Views\ChamCongs\Edit.cshtml" />
-    <Content Include="Views\ChamCongs\Index.cshtml" />
+    <Content Include="Views\NhanViens\TinhLuong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -370,9 +369,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57662</DevelopmentServerPort>
+          <DevelopmentServerPort>60464</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44343/</IISUrl>
+          <IISUrl>https://localhost:44368/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

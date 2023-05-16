@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using QuanLyNhanSu.Models;
@@ -21,6 +23,20 @@ namespace QuanLyNhanSu.Controllers
             return View(nhanViens.ToList());
         }
 
+        public ActionResult TinhLuong(int? ThangCong)
+        {
+            List<Luong> luong = new List<Luong>();
+            double tinhluong = 0.0;
+            int ngaycong = 0;
+            var nhanViens = db.NhanViens.Include(n => n.ChucVu).Include(n => n.PhongBan).ToList();
+            foreach(var nv in nhanViens)
+            {
+                tinhluong = Convert.ToDouble( db.sp_TinhLuong(nv.IdNV, ThangCong));
+                ngaycong = Convert.ToInt32(db.sp_TongNgayCong(nv.IdNV, ThangCong));
+                luong.Add(new Luong(tinhluong, ngaycong, nv));
+            }
+            return View(nhanViens);
+        }
         // GET: NhanViens/Details/5
         public ActionResult Details(int? id)
         {
@@ -62,6 +78,7 @@ namespace QuanLyNhanSu.Controllers
             ViewBag.IdCV = new SelectList(db.ChucVus, "IdCV", "TenCV", nhanVien.IdCV);
             ViewBag.IdPB = new SelectList(db.PhongBans, "IdPB", "TenPhong", nhanVien.IdPB);
             return View(nhanVien);
+
         }
 
         // GET: NhanViens/Edit/5
@@ -90,6 +107,7 @@ namespace QuanLyNhanSu.Controllers
         {
             if (ModelState.IsValid)
             {
+                //nhanVien.Password = Helper.ComputeSha256Hash(nhanVien.Password);
                 db.Entry(nhanVien).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -133,5 +151,6 @@ namespace QuanLyNhanSu.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="ChamCongs">
       <EntityTypeMapping TypeName="QuanLyNhanSu.ChamCong">
         <MappingFragment StoreEntitySet="ChamCong">
+          <ScalarProperty Name="IdCC" ColumnName="IdCC" />
           <ScalarProperty Name="NgayChamCong" ColumnName="NgayChamCong" />
           <ScalarProperty Name="IdNV" ColumnName="IdNV" />
         </MappingFragment>

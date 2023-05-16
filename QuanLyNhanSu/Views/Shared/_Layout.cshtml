@@ -18,6 +18,18 @@
     <link rel="stylesheet" href="~/Public/Admin/css/style.css">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="~/Public/Admin/css/font-sans.pro.css">
+
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $('#datepicker').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+        });
+    </script>*@
     <style>
         .note-editable {
             min-height: 200px;
@@ -53,12 +65,14 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#"> @Session["HoTen_user"]
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        @Session["HoTen_user"]
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="min-width:200px; font-size: 15px;">
                         <a href="~/NhanViens/Edit/@Session["user_id"]" class="dropdown-item dropdown-footer text-left">
-                            <i class="fas fa-user-edit mr-2"></i>Thông tin cá nhân</a>
+                            <i class="fas fa-user-edit mr-2"></i>Thông tin cá nhân
+                        </a>
                         <a href="~/Home/Logout" class="dropdown-item dropdown-footer text-left">
                             <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất
                         </a>
@@ -143,6 +157,8 @@
     <script>$(function () { $('.textarea').summernote() })</script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=699266887289373&autoLogAppEvents=1" nonce="xJm9L3lp"></script>
-
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

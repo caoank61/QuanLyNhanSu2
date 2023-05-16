@@ -2,11 +2,11 @@
 <Schema Namespace="QuanLyNhanSu" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="ChamCong">
     <Key>
-      <PropertyRef Name="NgayChamCong" />
-      <PropertyRef Name="IdNV" />
+      <PropertyRef Name="IdCC" />
     </Key>
-    <Property Name="NgayChamCong" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="IdNV" Type="Int32" Nullable="false" />
+    <Property Name="IdCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayChamCong" Type="DateTime" Precision="0" />
+    <Property Name="IdNV" Type="Int32" />
     <NavigationProperty Name="NhanVien" Relationship="Self.fk_NhanVienCC" FromRole="ChamCong" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="ChucVu">
@@ -62,7 +62,7 @@
     <NavigationProperty Name="NhanViens" Relationship="Self.fk_PhongBan" FromRole="PhongBan" ToRole="NhanVien" />
   </EntityType>
   <Association Name="fk_NhanVienCC">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
     <End Role="ChamCong" Type="Self.ChamCong" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NhanVien">

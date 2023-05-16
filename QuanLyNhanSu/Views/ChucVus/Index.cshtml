@@ -12,7 +12,7 @@
         <a href="@Url.Action("Create","ChucVus")" class="btn btn-outline-success btn-sm">Thêm mới</a>
     </div>
 </div>
-<table class="table table-info table-hover table-bordered text-center">
+<table class="table table-dark table-hover table-bordered text-center table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.IdCV)
@@ -35,9 +35,9 @@
                 @Html.DisplayFor(modelItem => item.TenCV)
             </td>
             <td>
-                <a href="@Url.Action("Details", "ChucVus", new { id = item.IdCV })" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="bottom" title="Chi Tiết" ><i class="fa fa-book"></i></a>
+                <a href="@Url.Action("Details", "ChucVus", new { id = item.IdCV })" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="bottom" title="Chi Tiết"><i class="fa fa-book"></i></a>
                 <a href="@Url.Action("Edit", "ChucVus", new { id = item.IdCV })" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Chỉnh Sửa"><i class="fas fa-pen"></i></a>
-                <a href="@Url.Action("Delete", "ChucVus", new { id = item.IdCV })" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="bottom" title="Xóa"><i class="far fa-trash-alt" ></i></a>
+                <a href="@Url.Action("Delete", "ChucVus", new { id = item.IdCV })" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="bottom" title="Xóa"><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
     }
