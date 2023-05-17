@@ -73,6 +73,12 @@
                         <a href="~/NhanViens/Edit/@Session["user_id"]" class="dropdown-item dropdown-footer text-left">
                             <i class="fas fa-user-edit mr-2"></i>Thông tin cá nhân
                         </a>
+                        <a href="~/HopDongs/Details/@Session["user_id"]" class="dropdown-item dropdown-footer text-left">
+                            <i class="fas fa-book mr-2"></i>Hợp Đồng Cá Nhân
+                        </a>
+                        <a href="@Url.Action("Create", "ChamCongs", new {IdNV = Session["user_id"]})" class="dropdown-item dropdown-footer text-left">
+                            <i class="fas fa-check mr-2"></i>Chấm Công
+                        </a>
                         <a href="~/Home/Logout" class="dropdown-item dropdown-footer text-left">
                             <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất
                         </a>
@@ -112,24 +118,30 @@
                                 <p>Phòng Ban</p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="@Url.Action("Index","NhanViens")" class="nav-link">
-                                <i class="nav-icon fas fa-person-booth"></i>
-                                <p>Nhân Viên</p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="@Url.Action("Index","HopDongs")" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>Hợp Đồng</p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="@Url.Action("Index", "ChamCongs")" class="nav-link">
-                                <i class="nav-icon fas fa-check"></i>
-                                <p>Chấm Công</p>
-                            </a>
-                        </li>
+                        @{
+                            if (Convert.ToBoolean(Session["isAdmin"]))
+                            {
+                                <li class="nav-item has-treeview">
+                                    <a href="@Url.Action("Index","NhanViens")" class="nav-link">
+                                        <i class="nav-icon fas fa-person-booth"></i>
+                                        <p>Nhân Viên</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item has-treeview">
+                                    <a href="@Url.Action("Index","HopDongs")" class="nav-link">
+                                        <i class="nav-icon fas fa-book"></i>
+                                        <p>Hợp Đồng</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="@Url.Action("Index", "ChamCongs")" class="nav-link">
+                                        <i class="nav-icon fas fa-check"></i>
+                                        <p>Chấm Công</p>
+                                    </a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </nav>
             </div>

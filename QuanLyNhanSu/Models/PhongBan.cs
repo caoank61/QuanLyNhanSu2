@@ -23,15 +23,13 @@ namespace QuanLyNhanSu.Models
 
         [Display(Name = "Mã Phòng Ban")]
         public int IdPB { get; set; }
-
         [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
-        [Display(Name = "Phòng Ban")]
+        [Display(Name = "Tên Phòng Ban")]
         public string TenPhong { get; set; }
-
         [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Hotline Phòng Ban")]
         public string SDT { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien> NhanViens { get; set; }
     }

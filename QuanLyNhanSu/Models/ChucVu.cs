@@ -20,12 +20,10 @@ namespace QuanLyNhanSu.Models
         {
             this.NhanViens = new HashSet<NhanVien>();
         }
-
-
+    
         [Display(Name = "Mã Chức Vụ")]
         public int IdCV { get; set; }
-
-        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này")]
         [Display(Name = "Tên Chức Vụ")]
         public string TenCV { get; set; }
     

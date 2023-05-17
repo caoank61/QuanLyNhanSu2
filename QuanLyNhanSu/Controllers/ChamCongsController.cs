@@ -17,7 +17,17 @@ namespace QuanLyNhanSu.Controllers
         // GET: ChamCongs
         public ActionResult Index()
         {
+            /*List<ChamCong> chamCongs = null;
+            int id = Convert.ToInt32(Session["user_id"]);
+            if (Convert.ToBoolean(Session["isAdmin"]))
+            {
+                 chamCongs = db.ChamCongs.Include(c => c.NhanVien).ToList();
+            }else
+            {
+                 chamCongs = db.ChamCongs.Where(i =>i.IdNV == id).Include(c => c.NhanVien).ToList();
+            }*/
             var chamCongs = db.ChamCongs.Include(c => c.NhanVien);
+
             return View(chamCongs.ToList());
         }
 
@@ -37,10 +47,10 @@ namespace QuanLyNhanSu.Controllers
         }
 
         // GET: ChamCongs/Create
-        public ActionResult Create()
+        public ActionResult Create(int IdNV)
         {
-            ViewBag.IdNV = new SelectList(db.NhanViens, "IdNV", "HoTen");
-            return View();
+            var Nhanvien = db.NhanViens.Where(i=>i.IdNV==IdNV).Include(i=>i.ChamCongs).FirstOrDefault();
+            return View(Nhanvien);
         }
 
         // POST: ChamCongs/Create
@@ -54,7 +64,14 @@ namespace QuanLyNhanSu.Controllers
             {
                 db.ChamCongs.Add(chamCong);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Convert.ToBoolean(Session["isAdmin"]))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
             ViewBag.IdNV = new SelectList(db.NhanViens, "IdNV", "HoTen", chamCong.IdNV);

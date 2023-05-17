@@ -162,6 +162,7 @@
     <Compile Include="Models\HopDong.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Luong.cs" />
     <Compile Include="Models\NhanVien.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>

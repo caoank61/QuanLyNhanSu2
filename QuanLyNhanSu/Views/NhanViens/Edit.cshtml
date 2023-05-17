@@ -50,16 +50,19 @@
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.IsAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="radio-inline">
-                @Html.RadioButtonFor(model => model.IsAdmin, "False")<span>Không</span>
-                @Html.RadioButtonFor(model => model.IsAdmin, "True")<span>Có</span>
+    @{
+    if (Convert.ToBoolean(Session["isAdmin"])){
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="radio-inline">
+                    @Html.RadioButtonFor(model => model.IsAdmin, "False")<span>Không</span>
+                    @Html.RadioButtonFor(model => model.IsAdmin, "True")<span>Có</span>
+                </div>
             </div>
         </div>
-    </div>
+    }
+    }
 
     <div class="form-group">
         @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -111,18 +114,44 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.IdPB, "Tên Phòng Ban", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("IdPB", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.IdPB, "", new { @class = "text-danger" })
-        </div>
+        @{
+            if (Convert.ToBoolean(Session["isAdmin"]))
+            {
+                <div class="col-md-10">
+                    @Html.DropDownList("IdPB", null, htmlAttributes: new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.IdPB, "", new { @class = "text-danger" })
+                </div>
+            }
+            else
+            {
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.PhongBan.TenPhong, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.PhongBan.TenPhong, "", new { @class = "text-danger" })
+                </div>
+            }
+        }
+
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.IdCV, "Tên Chức Vụ", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("IdCV", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.IdCV, "", new { @class = "text-danger" })
-        </div>
+        @{
+            if (Convert.ToBoolean(Session["isAdmin"]))
+            {
+                <div class="col-md-10">
+                    @Html.DropDownList("IdCV", null, htmlAttributes: new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.IdCV, "", new { @class = "text-danger" })
+                </div>
+            }
+            else
+            {
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.ChucVu.TenCV, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.ChucVu.TenCV, "", new { @class = "text-danger" })
+                </div>
+            }
+        }
+
     </div>
 
     <div class="form-group">
@@ -135,18 +164,42 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.LuongCB, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.LuongCB, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LuongCB, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        @{
+            if (Convert.ToBoolean(Session["isAdmin"]))
+            {
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LuongCB, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LuongCB, "", new { @class = "text-danger" })
+                </div>
+            }
+            else
+            {
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LuongCB, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.LuongCB, "", new { @class = "text-danger" })
+                </div>
+            }
+        }
 
-    <div class="form-group row" style="padding-top:10px;padding-left:15px">
-        <input type="submit" value="Cập Nhật" class="btn btn-success" />
-        <div class="col-md-2">
-            <a href="@Url.Action("Index","NhanViens")" class="btn btn-primary">Trở lại</a>
-        </div>
     </div>
+    @{
+        if (Convert.ToBoolean(Session["isAdmin"])){
+        <div class="form-group row" style="padding-top:10px;padding-left:15px">
+            <input type="submit" value="Cập Nhật" class="btn btn-success" />
+            <div class="col-md-2">
+                <a href="@Url.Action("Index","NhanViens")" class="btn btn-primary">Trở lại</a>
+            </div>
+        </div>
+        }else{
+        <div class="form-group row" style="padding-top:10px;padding-left:15px">
+            <input type="submit" value="Cập Nhật" class="btn btn-success" />
+            <div class="col-md-2">
+                <a href="@Url.Action("Index","Home")" class="btn btn-primary">Trở lại</a>
+            </div>
+        </div>
+        }
+    }
+
 </div>
 }
 

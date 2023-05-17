@@ -7,23 +7,24 @@
 
 <h2 class="text-center">Danh Sách Nhân Viên</h2>
 
+        <div class="form-group row">
+            <div class="col-md-1">
+                <a href="@Url.Action("Create","NhanViens")" class="btn btn-outline-success btn-sm">Thêm mới</a>
+            </div>
+            @using (Html.BeginForm("TinhLuong","NhanViens",FormMethod.Post))
+            {
+            <div class="form-group row">
+                <div class="col-md-8">
+                    <input type="text" name="ThangCong" placeholder="Nhập Tháng Để Tính Lương" style="width:200px " />
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-success btn-sm">Tính Lương</button>
+                    <!--<a href="@Url.Action("TinhLuong","NhanViens")" class="btn btn-success btn-sm" >Tính Lương</a>-->
+                </div>
+            </div>
+            }
+        </div>
 
-<div class="form-group row">
-    <div class="col-md-1">
-        <a href="@Url.Action("Create","NhanViens")" class="btn btn-outline-success btn-sm">Thêm mới</a>
-    </div>
-    @using (Html.BeginForm())
-    {
-    <div class="form-group row">
-        <div class="col-md-8">
-            <input type="text" name="ThangCong" placeholder="Nhập Tháng Để Tính Lương" style="width:200px " />
-        </div>
-        <div class="col-md-4">
-            <a href="@Url.Action("TinhLuong","NhanViens")" class="btn btn-success btn-sm">Tính Lương</a>
-        </div>
-    </div>
-        }
-    </div>
     <table class="table table-dark table-hover table-bordered text-center table-striped">
         <tr>
             <th>
@@ -38,12 +39,10 @@
             @*<th>
                     @Html.DisplayNameFor(model => model.Password)
                 </th>*@
-            @*@if (!Convert.ToBoolean(Session["isAdmin"]))
-                {
-                    <th>
-                        @Html.DisplayNameFor(model => model.IsAdmin)
-                    </th>
-                }*@
+           
+            @*<th>
+                @Html.DisplayNameFor(model => model.IsAdmin)
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.SDT)
             </th>
@@ -92,12 +91,10 @@
             @*<td>
                     @Html.DisplayFor(modelItem => item.Password)
                 </td>*@
-            @*@if (!Convert.ToBoolean(Session["isAdmin"]))
-                {
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsAdmin)
-                    </td>
-                }*@
+            
+            @*<td>
+                @Html.DisplayFor(modelItem => item.IsAdmin)
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.SDT)
             </td>

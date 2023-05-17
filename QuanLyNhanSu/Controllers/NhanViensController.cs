@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -31,11 +32,11 @@ namespace QuanLyNhanSu.Controllers
             var nhanViens = db.NhanViens.Include(n => n.ChucVu).Include(n => n.PhongBan).ToList();
             foreach(var nv in nhanViens)
             {
-                tinhluong = Convert.ToDouble( db.sp_TinhLuong(nv.IdNV, ThangCong));
-                ngaycong = Convert.ToInt32(db.sp_TongNgayCong(nv.IdNV, ThangCong));
+                tinhluong =  db.sp_TinhLuong(nv.IdNV, ThangCong).FirstOrDefault().GetValueOrDefault();
+                ngaycong = db.sp_TongNgayCong(nv.IdNV, ThangCong).FirstOrDefault().GetValueOrDefault();
                 luong.Add(new Luong(tinhluong, ngaycong, nv));
             }
-            return View(nhanViens);
+            return View(luong);
         }
         // GET: NhanViens/Details/5
         public ActionResult Details(int? id)
@@ -110,7 +111,14 @@ namespace QuanLyNhanSu.Controllers
                 //nhanVien.Password = Helper.ComputeSha256Hash(nhanVien.Password);
                 db.Entry(nhanVien).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Convert.ToBoolean(Session["isAdmin"]))
+                {
+                    return RedirectToAction("Index");
+                }else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                    
             }
             ViewBag.IdCV = new SelectList(db.ChucVus, "IdCV", "TenCV", nhanVien.IdCV);
             ViewBag.IdPB = new SelectList(db.PhongBans, "IdPB", "TenPhong", nhanVien.IdPB);

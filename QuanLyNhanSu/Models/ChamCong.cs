@@ -18,14 +18,13 @@ namespace QuanLyNhanSu.Models
         [Display(Name = "Mã Chấm Công")]
         public int IdCC { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
         [Display(Name = "Ngày Chấm Công")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage ="Vui lòng không bỏ trống trường này!")]
         public Nullable<System.DateTime> NgayChamCong { get; set; }
-
+        [Display(Name = "Mã Nhân Viên")]
         [Required(ErrorMessage = "Vui lòng không bỏ trống trường này!")]
-        [Display(Name = "Tên Nhân Viên")]
         public Nullable<int> IdNV { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }
