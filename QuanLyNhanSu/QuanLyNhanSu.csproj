@@ -162,6 +162,7 @@
     <Compile Include="Models\HopDong.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Luong.cs" />
     <Compile Include="Models\NhanVien.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -332,6 +333,7 @@
     <Content Include="Views\PhongBans\Details.cshtml" />
     <Content Include="Views\PhongBans\Edit.cshtml" />
     <Content Include="Views\PhongBans\Index.cshtml" />
+    <Content Include="Views\NhanViens\TinhLuong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

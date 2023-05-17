@@ -51,10 +51,12 @@
     <div class="form-group">
         @Html.LabelFor(model => model.IsAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
+            @*@Html.EditorFor(model => model.IsAdmin, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IsAdmin, "", new { @class = "text-danger" })*@
             <div class="radio-inline">
-                @Html.RadioButtonFor(model => model.IsAdmin,"False",new {@checked = "checked"})<span>False</span>
-                @Html.RadioButtonFor(model => model.IsAdmin,"True")<span>True</span>
-            </div>
+            @Html.RadioButtonFor(model => model.IsAdmin,"False",new {@checked = "checked"})<span>Không</span>
+            @Html.RadioButtonFor(model => model.IsAdmin,"True")<span>Có</span>
+        </div>
         </div>
     </div>
 
@@ -68,6 +70,10 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="col-md-10">
+            @Html.EditorFor(model => model.GioiTinh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+        </div>*@
         <div class="radio-inline ">
             @Html.RadioButtonFor(model => model.GioiTinh, "Nam",new {@checked = "true"})<span>Nam</span>
             @Html.RadioButtonFor(model => model.GioiTinh, "Nữ")<span>Nữ</span>
@@ -77,7 +83,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.TextBoxFor(model => model.NgaySinh,"{0:MM/dd/yyyy}",  new { @class = "form-control", @id = "datepicker" } )
             @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -9,15 +9,15 @@
 
     <div class="form-group row">
         <div class="col-md-1">
-            <a href="@Url.Action("Create","ChamCongs")" class="btn btn-outline-success btn-sm">Thêm mới</a>
+            <a href="@Url.Action("Create","ChamCongs", new {IdNV = Session["user_id"]})" class="btn btn-outline-success btn-sm">Thêm mới</a>
         </div>
     </div>
 
     <table class="table table-dark table-hover table-bordered text-center table-striped">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.IdCC)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.NhanVien.HoTen)
             </th>
@@ -30,9 +30,9 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.IdCC)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.NhanVien.HoTen)
                 </td>
