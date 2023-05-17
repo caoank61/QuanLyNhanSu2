@@ -1,0 +1,78 @@
+﻿
+@model IEnumerable<QuanLyNhanSu.Models.Luong>
+@{
+    ViewBag.Title = "TinhLuong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Bảng Lương Của Nhân Viên</h2>
+<br />
+<hr />
+<table class="table table-dark table-hover table-bordered text-center table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.IdNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.GioiTinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.NgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.ChucVu.TenCV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.PhongBan.TenPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nv.LuongCB)
+        </th>
+        <th>Ngày Công</th>
+        <th>Tổng Lương</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.IdNV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.HoTen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.GioiTinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.NgaySinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.ChucVu.TenCV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.PhongBan.TenPhong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nv.LuongCB)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayCong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TongLuong)
+    </td>
+</tr>
+
+    }
+
+</table>
+<div class="form-group row" style="padding-top:10px;padding-left:15px">
+    <div class="col-md-2">
+        <a href="@Url.Action("Index","NhanViens")" class="btn btn-primary">Trở lại</a>
+    </div>
+</div>
+

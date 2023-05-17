@@ -13,7 +13,6 @@ namespace QuanLyNhanSu.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    
     public partial class ChucVu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +20,10 @@ namespace QuanLyNhanSu.Models
         {
             this.NhanViens = new HashSet<NhanVien>();
         }
-
+    
         [Display(Name = "Mã Chức Vụ")]
         public int IdCV { get; set; }
-
-        [Required(ErrorMessage = "Vui Lòng Nhập Trường Này")]
+        [Required(ErrorMessage = "Vui lòng không bỏ trống trường này")]
         [Display(Name = "Tên Chức Vụ")]
         public string TenCV { get; set; }
     

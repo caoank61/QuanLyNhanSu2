@@ -41,7 +41,7 @@ namespace QuanLyNhanSu.Controllers
             {
                 Session["user_id"] = user.IdNV;
                 Session["HoTen_user"] = user.HoTen;
-                Session["isAdmin"] = db.NhanViens.Where(p => p.IdNV == Convert.ToInt32(Session["user_id"]));
+                Session["isAdmin"] = user.IsAdmin;//db.NhanViens.Where(p => p.IdNV == Convert.ToInt32(Session["user_id"]));
                 return RedirectToAction("Index", "Home");
             }
             else ViewBag.error = "Thông tin đăng nhập không hợp lệ!!!";

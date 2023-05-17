@@ -7,7 +7,7 @@ using System.Web;
 
 namespace QuanLyNhanSu
 {
-    public class Helper
+    public static class Helper
     {
         public static string ComputeSha256Hash(string rawData)
         {
